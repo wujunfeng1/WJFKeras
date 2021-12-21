@@ -1,7 +1,7 @@
 name = "WJFKeras"
 uuid = "067411ba-aac3-40b0-a792-8518327d5f9a"
 authors = ["Junfeng Wu <wujunfeng1@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Compat = "34da2185-b29b-5c13-b0c7-acf172513d20"

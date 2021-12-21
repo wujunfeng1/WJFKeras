@@ -68,6 +68,10 @@ function StatsBase.fit!(m::Sequential, args...; verbose=0, kwargs...)
     m.obj.fit(args...; verbose=verbose, kwargs...)
 end
 
+function fit!(m::Sequential, args...; verbose=0, kwargs...)
+    m.obj.fit(args...; verbose=verbose, kwargs...)
+end
+
 function evaluate(m::Sequential, X, y; batch_size=32, verbose=0)
     return m.obj.evaluate(X, y, batch_size=batch_size, verbose=verbose)
 end
@@ -76,4 +80,8 @@ function StatsBase.predict(m::Sequential, X; batch_size=32, verbose=0)
     return m.obj.predict(X, batch_size=batch_size, verbose=verbose)
 end
 
-export Model, Sequential, layers, inputs, outputs, evaluate, add!, compile!
+function predict(m::Sequential, X; batch_size=32, verbose=0)
+    return m.obj.predict(X, batch_size=batch_size, verbose=verbose)
+end
+
+export Model, Sequential, layers, inputs, outputs, evaluate, add!, compile!, fit!, predict
